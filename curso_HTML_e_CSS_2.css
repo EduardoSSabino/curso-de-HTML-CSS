@@ -1,0 +1,717 @@
+/* CURSO 2 DE HTML5 E CSS3 */
+
+/* TRANSIÇÕES
+SITES: 
+	http://fontawesome.io/icons/   --Para ver a lista completa de ícones disponíveis no Font Awesome
+	
+	http://spritecow.com/ & http://wearekiss.com/spritepad  -- Ferramentas em que você pode ter suas imagens em arquivos separados, e então a ferramenta junta todos em uma única imagem e gera o código CSS automaticamente.
+
+	http://una.im/CSSgram/  -- Há uma biblioteca baseada nos filtros do CSS, o CSSgram, que recria os filtros do Instagram apenas com CSS. Você pode conferir em:
+
+	https://sass-lang.com/  --Sass: pré-processador
+
+	http://winless.org/online-less-compiler  --Less:pré-processador
+
+	http://stylus-lang.com/try.html  --Stylus:pré-processador
+*/
+
+/* criando variavel local*/
+.a1{
+   color: blue; /*minha variavel LOCAL de nome minha-cor*/;
+   background-color: hotpink;
+}
+
+/* criando variavel global */
+:root{
+   --minha-cor1: blue;/*variavel global*/
+}
+
+.a2{
+   background-color: var(--minha-cor1);
+}
+
+div{/**/
+   position: relative;/*posição relativa*/
+   border: 2px solid green;/*borda solida de 2 pixels e verde*/
+   width: 100px;/*definindo largura*/
+   height: 20px;/*definindo altura*/
+}
+
+div::before{/*vira deppis*//*  CRIANDO UM TRIANGULO DO LADO ESQUERDO DA MINHA BORDA! */
+   content: ""; /*conteudo que vira antes do conteudo da div*/
+   position: absolute;/*posicionando em relação ao pai, no caso a section acima ja que ela é relative*/
+   left: -12px;/*a esqurda*/
+   top: 3px;/*3 pixels do topo*/
+
+   border-top: 7px solid transparent; /*borda a 7 pixels do topo solida e trasnparente*/
+   border-right: 5px solid green;/*borda a 5 pixels da direita solida verde*/
+   border-bottom: 7px solid transparent;/*borda do fundo solida e transparente*/
+   border-left: 5px solid transparent;/*borda da esquerda solida e trasnparente */
+}
+
+div::before{/*o conteudo vira depois*/
+   content: "DEF - ";/* o coteudo que estiver na div vira deppois de DEF - */
+}
+
+div::after{/* o conteudo vira antes */
+   content: "DEF - ";/* o coteudo que estiver na div vira antes de DEF - */
+}
+
+/* CRIANDO SPRITES - COLANDO IMAGENS FAZENDO COM QUE SE TORNEM UMA UNICA IMAGEM */
+
+.meu-icone{/*Colocamos uma largura e altura qualquer. Note que por padrão a imagem se repete para completar toda a div.*/
+   height: 30px;/*altura*/
+   width: 110px;/*largura*/
+   background-image: url('meu_sprite.png');/* Ela serve para utilizarmos uma imagem como fundo de um elemento.*/
+}
+
+.meu-icone{/*definindo um tamanho pra todas as imagens que tem meu-icone como começo do nome da classe*/
+   height: 20px;/*altura*/
+   width: 20px;/*largura*/
+   background-image: url('meu_sprite.png');/*definindo a imagem de fundo*/
+   background-repeat: no-repeat;/*impede que o fundo se repita para completar o elemento*/
+}
+
+/*Agora precisamos permitir uma maneira de escolhermos o ícone que queremos. */
+
+.estrela-vermelha{/*final do nome da classe*/
+   background-position: 0 0;/*nos permitem arrastar as imagens. Podemos passar um valor para a horizontal e outro para a vertical. A vertical nós vamos manter como 0,*/
+}
+
+.estrela-azul{/*final do nome da classe*/
+   background-position: -20px 0;/*nos permitem arrastar as imagens. Podemos passar um valor para a horizontal e outro para a vertical. A vertical nós vamos manter como 0,*/
+}
+
+.estrela-verde{/*final do nome da classe*/
+   background-position: -40px 0;/*nos permitem arrastar as imagens. Podemos passar um valor para a horizontal e outro para a vertical. A vertical nós vamos manter como 0,*/
+}
+
+/* FONT ICONS. prática que nos permite criar ícones. */
+
+.meu-icone::after{/* colocando um valor que vai vir depois da classe .meu-icone */
+  content: "\00a9"; /*Esse é o código do icone/caracter*/
+}
+/*Mudando o estilo do FONT COINS (fa) com CSS:*/
+i{/*classe que esta sendo alterada*/
+   color: red;/*mudando a cor*/
+   font-size: 20px;/*o tamanho da fonte*/
+   text-shadow: 1px 1px 2px blue;/*sobra do texto e seus respectivos tamangos e cor*/
+}
+
+/* GRADIENTE LINEAR. background: linear-gradient( direção, cor 1, cor 2, . . . . .  ); 
+ A cor de início começa em um lado e a cor de parada termina no lado oposto. Podemos indicar a direção do gradiente. O padrão é de cima para baixo.*/
+
+div{
+   height: 200px;/*altura de 200 pixels*/
+   background: linear-gradient(red, green);/*gradient linear do fundu, usando duas cores*/
+}/*Se a gente omitir a direção, o padrão será usado (to bottom, ou seja, para baixo)
+temos outras oopções de sentido, como to right, to left,to top right (para cima e pra direita
+ou usarmos angulos, como:  230deg, 2rad, ou ate mesmo dizermos a porcentagem de cada cor como: 
+to rright, red, green 20%.*/
+
+
+/* GRADIENTE RADIAL.background: radial-gradient( formato tamanho posição, cor 1, cor 2, . . . . .  );.
+  padrão será usado (eclipse).A cor de início começa no centro. Podemos indicar se queremos uma forma circular ou elíptica. O padrão é a elíptica.
+podemos indicar a posição: 
+closest-side;
+farthest-side;
+closest-corner;
+farthest-corner.
+*/
+
+/*exemplos*/
+
+div{
+   height: 200px;/*altura de 200 pixels*/
+   background: radial-gradient(closest-side, red, green);/*grdiente radial vermelho e verde*/
+}
+
+div{
+   height: 200px;/*altura de 200 pixels*/
+   background: radial-gradient(farthest-side, red, green);/*grdiente radial vermelho e verde*/
+}
+
+div{
+   height: 200px;/*altura de 200 pixels*/
+   background: radial-gradient(closest-corner, red, green);/*grdiente radial vermelho e verde*/
+}
+
+div{
+   height: 200px;/*altura de 200 pixels*/
+   background: radial-gradient(farthest-corner, red, green);/*grdiente radial vermelho e verde*/
+}
+
+ 
+div{
+   height: 200px;/*altura de 200 pixels*/
+   background: radial-gradient(red, green);/*grdiente radial vermelho e verde*/
+}
+
+/* INICIANDO UM CONTADOR.*/
+.counter-reset{/*A propriedade "counter-reset" zera o contador. */
+   counter-reset: meuContador;/*Nós aqui criamos um contador com o nome "meuContador".
+*/
+}
+
+/*Exibindo o Contador*/
+
+.print-counter::after{/*exibindoo meu contador */
+   content: counter(meuContador);/*Passamos para "content" a função "counter", que retorna o valor de um contador, e então passamos o nome do nosso contador para a função "counter".*/
+}
+
+/*Incrementando o Contador*/
+
+.up-counter{/*".up-counter". Sempre que um elemento com essa classe for encontrado pelo navegador, o nosso contador irá aumentar.*/
+   counter-increment: meuContador;
+}
+
+/* Condições para Incremento de Contadores */
+
+.up-counter:hover{/*Com ":hover" indicamos que o seletor será válido quando o cursor do mouse passar por cima de um elemento com a classe ".up-counter". Só assim a propriedade "counter-increment" será interpretada.*/
+   counter-increment: meuContador;
+}
+
+/* GUARDANDO ESTADOS */
+
+.menu{/*classe de nome menu*/
+   display: none;/*sem exibição*/
+   color: #fff;/*cor da letra*/
+   background-color: #252525;/*cor de fundo*/
+   margin: 0;/*sem margem*/
+   padding: 10px;/*10 pixels de preenchimento*/
+}
+
+.menu-item{/*minha classe de nome menu-item*/
+   list-style-type: none;/*sem marcadores de listas (aqueles circulos pretos*/
+}
+
+#meuMarcador{/* desaparece com o meu menu */
+	display:  none;
+}
+
+#meuMarcador:checked + .menu{/*Agora precisamos fazer com que o menu apareça e desapareça dependendo do estado do Checkbox. Para isso temos o pseudo seletor ":checked", que indica quando um Checkbox está ou não marcado.*/
+   display: block;/* mostrar meu menu */
+}
+
+/*TRANSFORMAÇÕES 2D E 3D*/
+
+div{
+   height: 200px;/* altura de 200 pixels */
+   width: 400px;/*largura de 400 pixels*/
+   background-color: red;/*cor do fundo vermelha*/
+   border: 5px solid black;/*borda de 5 pixels de largura e preta*/
+}
+
+/* TRANSFORMAÇÕES 2D */
+/* 
+Funções: USAMOS TRANSOFORM: ANTES!;
+	translate()    --Essa função move um elemento em relação à sua posição original.
+	rotate()    --Essa função rotaciona um elemento de acordo com o ângulo passado.
+	scale()    --Essa função permite redimensionar o elemento de acordo com um valor relativo.
+	skew()    --Esta função inclina o elemento de acordo com os eixos X e Y.
+	matrix()    --Esta função combina todas as funções de transformação 2D em uma só.
+*/
+
+/* TRANSFORMAÇÕES 3D. A diferença entre 2D e 3D é o acréscimo do eixo Z nas funções.*/
+
+/*
+Primeiro temos que indicar um valor de perspectiva para ativar os efeitos 3D. Esse valor vai indicar a intensidade do efeito, como se fosse o tamanho do local onde o objeto 3D irá existir.
+Podemos indicar a perspectiva de duas maneiras:
+*/
+/*
+Funções: USAMOS TRANSOFORM: ANTES!
+	rotate3d    --Passamos os ângulos relativos aos eixos X, Y e Z. 
+	translate3d    --Passamos os ângulos relativos aos eixos X, Y e Z. 
+	scale3d    --Passamos os ângulos relativos aos eixos X, Y e Z. 
+*/
+
+div{
+   perspective: 500;/* sintax basica */
+}
+
+div{
+   transform: perspective(500);/* sintax basica */
+}
+
+/* FILTROS. São efeitos iguais aos presentes em softwares de edição de imagem, onde podemos alterar a saturação, brilho, deixar uma imagem com escala cinza, etc. */
+
+div{/**/
+   filter: nome_do_filtro( valor );/*sintax basica*/
+}
+/*
+Tipos de filtro: matiz
+
+	--blur(10px); --quanto maior o valor, maior o borrão
+
+	--brightness(%) --Ajusta o brilho da imagem. 0% deixa a imagem totalmente preta.
+	100% representa a imagem original.
+	Valores acima de 100% deixarão a imagem mais clara.
+	
+	--contrast(%) --Ajusta o contraste da imagem, isso é, a distância entre a cor mais clara e a mais escura presente na imagem.
+	0% deixa a imagem completamente preta.
+	100% representa a imagem original.
+	Valores acima de 100% deixarão a imagem com mais contraste
+
+	--drop-shadows (posição_horizontal posição_vertical dispersão cor) --Possibilita a aplicação de sombras na imagem, com efeito igual às propriedades "text-shadow" e "box-shadow".
+
+	--grayscale(%) --Transforma as cores da imagem para uma escala cinza. 
+	0% representa a imagem original.100% deixará a imagem totalmente cinza.
+
+	--hue-rotate(ângulo) --Altera a matiz, as cores da imagem.
+	Para isso precisamos conhecer a roda de cores
+
+	--invert(%) --Inverte as cores da imagem.0% representa a imagem original.
+	100% deixará a imagem com as cores completamente invertidas.
+
+	--opacity(%) --Atribui um nível de transparência ao elemento.
+	100% representa a imagem original.
+	0% deixará a imagem totalmente transparente.
+	Esta função é igual a propriedade "opacity".
+
+	--saturate(%) --Altera o nível de saturação da imagem.
+	0% deixa a imagem sem saturação.
+	100% representa a imagem original.
+	Valores acima de 100% deixarão a imagem supersaturada.
+
+	--sepia(%) --Transforma as cores da imagem para sépia.
+	0% representa a imagem original.
+	100% deixará a imagem totalmente sépia.
+	
+ */
+
+/* TRANSIÇÕES. As transições fazem parte do CSS3 e nos permitem fazer com que os valores das propriedades sejam alterados suavemente.*/
+
+div{
+   position: absolute;/*posicionando em relação ao pai, no caso a section acima ja que ela é relative*/
+   top: 10px;/* 10 pixels do topo */
+   left: 10px;/* 10 pixels para esquerda */
+   border: 5px solid black;/*borda com 5 pixels e solida e preta*/
+   background-color: red;/*cor do fundo:  vermelha*/
+   width: 200px;/*largura de 200 pixels. minha largura sera alterada quando eu passar o cursor por cima.*/
+   height: 100px;/*altura de 100 pixels*/
+
+   transition: width ease-in 2s;/*1 segundo de transição. a transição sera na propriedade widght (largura)*/
+}
+
+div:hover{/*Com ":hover" indicamos que o seletor será válido quando o cursor do mouse passar por cima*/
+   width: 300px;/* quando eu passar o mouse por cima, ira alterar a minha largura pra 400 pixels.*/
+}
+
+/*Curva da Velocidade da Transição*/
+/*
+	--ease --a transição começa acelerando e termina desacelerando
+
+	--linear --a transição mantém uma velocidade constante
+
+	--ease-in --a transição começa acelerando e mantém uma velocidade constante até o final
+
+	--ease-out --a transição começa com uma velocidade constante e vai desacelerando no final
+
+	--ease-in-out --a transição é lenta no começo e no final, mantendo uma velocidade constante no meio
+
+	--cubic-bezier(n,n,n,n) --permite que a gente defina nossos próprios valores para a curva da velocidade
+*/
+
+div{
+   transition: width 1s ease 0.5s;/**/
+}
+
+/*ou poderiamos declarar as propriedades separadamente*/
+
+div{
+   transition-property: width;/*largura*/
+   transition-duration: 1s;/*duração da transição*/
+   transition-timing-function: ease;/*função de tempo de transição: facil*/
+   transition-delay: 0.5s;/* delay de transição: 5 segundos */
+}
+
+/* ANIMAÇÃO: parecida com as transições porem com suas particularidades:
+	--Gatilho  --começa a partir de um evento, como passar o mouse por cima;
+	--Repetição  --podemos fazer com que a animação se repita por e varias vezes (looping);
+	--Quadro de animação (keyframes)  --diferente da transição que fazemos transições de x pra y, podemos agregar valores intermediarios
+ */
+/* PROPRIEDADES DE ANIMAÇÃO... EXEMPLOS NA LINHA 415
+	--animation-name  --nome da animação;
+	--animation-duration  --tempo de duração da animação;
+	--animation-timing-function  --função da curva de velocidade;
+	--animation-delay  --atraso da animação iniciar;
+	--animation-iteration-count  --quantidade de vezes que a animação irá ocorrer;
+	--animation-direction  --direção da animação;
+	--animation-play-state  --indica se a animação está pausada ou executando;
+	--animation-fill-mode  --indica como o elemento deve ficar quando a animação não estiver sendo executada.
+*/
+
+div{
+   width: 100px;/*100 pixels de largura*/
+   height: 100px;/*100 pixels de altura*/
+   border: 5px solid black;/* borda de 5 pixels solida e preta */
+}
+@keyframes minhaanimacao{/*quadro de animação (classe que recebe a animação*/
+   from {/*a partir de...*/
+      background-color: red;/*fundo vermelho*/
+   }
+   to {/*para*/
+      background-color: blue;/*fundo azul*/
+   }
+}
+
+div{/*Agora basta indicar na nossa Div que queremos utilizar a animação de nome "minhaanimacao".*/
+   width: 100px;/*100 pixels de largura*/
+   height: 100px;/*100 pixels de altura*/
+   border: 5px solid black;/*borda de 5 pixels solida e preta*/
+
+   animation-name: minhaanimacao;/*nome da animação*/
+   animation-duration: 2s;/*2 segundos de duração*/
+}
+
+/* LOOPING nas animalções*/
+
+div{
+   width: 100px;/*100 pixels de largura*/
+   height: 100px;/*100 pixels de altura*/
+   border: 5px solid black;/*borda de 5 pixels solida e preta*/
+
+   animation-name: minhaanimacao;/*nome da minha animação*/
+   animation-duration: 2s;/*2 segundos de duração*/
+   animation-iteration-count: infinite;/*LOOPING: contagem de iteração de animação*/
+}
+
+/* DIREÇÃO DA ANIMAÇÃO:  alterar a direção da animação de duas maneiras: indicando que ela faça o inverso ou que ela vá na direção normal e depois reverta. */
+
+div{/*   width: 100px;/*100 pixels de largura*/
+   height: 100px;/*100 pixels de altura*/
+   border: 5px solid black;/*borda de 5 pixels solida e preta*/
+
+   animation-name: minhaanimacao;/*olocando os efeitos da animação nessa Div*/
+   animation-duration: 2s;/**/
+   animation-iteration-count: infinite;/*LOOPING:  contagem de iteralçao de animações*/
+   animation-direction: reverse;/*fCom isso, ao invés da nossa animação ir do vermelho para o azul, ela irá do azul para o vermelho.*/
+}
+
+div{/*"alternate", a direção da animação ficará sendo invertida a cada ciclo, ou seja, começa do vermelho para o azul e depois volta do azul para o vermelho.*/
+   width: 100px;/*100 pixels de largura*/
+   height: 100px;/*100 pixels de altura*/
+   border: 5px solid black;/*borda de 5 pixels solida e preta*/
+
+   animation-name: minhaanimacao;/*olocando os efeitos da animação nessa Div*/
+   animation-duration: 2s;/*2 segundos de duração*/
+   animation-iteration-count: infinite;/*LOOPING: contagem de iteração da animação*/
+   animation-direction: alternate;/*DIREÇÃO DA ANIMAÇÃO:  alterar a direção da animação*/
+}
+
+/*AIMAÇÃO COM VARIAS MUDANÇAS:  utilizamos porcentagem, que indicará em que momento da animação teremos a alteração.*/
+
+@keyframes minhaanimacao{/*declarando uma animação com varias mudanças (%)*/
+   0% {
+      background-color: red;
+   }
+   17% {
+      background-color: yellow;
+   }
+   50% {
+      background-color: green;
+   }
+   100% {
+      background-color: blue;
+   }
+}
+ 
+/* PROPRIEDADES DE ANIMAÇÃO */
+div{
+   animation-name: minhaanimacao;/* colocando os efeitos da animação nessa Div*/
+   animation-duration: 2s;/* tempo de duração da animação;*/
+   animation-timing-function: ease;/*função da curva de velocidade;*/
+   animation-delay: 0.5s;/*atraso da animação iniciar;*/
+   animation-iteration-count: infinite;/*quantidade de vezes que a animação irá ocorrer;*/
+   animation-direction: alternate;/* direção da animação;*/
+}
+/*E podemos ter o mesmo efeito com a forma curta declarando assim:*/
+div{
+   animation: minhaanimacao 2s ease 0.5s infinite alternate;
+}
+
+/*MEDIA TYPES: 
+	--all  --Para todos os dispositivos;
+	--print  --Para impressão ou para documentos na tela de prévia para impressão;
+	--screen  --Para dispositivos com telas coloridas;
+	--speech  --Para sintetizadores de voz.
+*/
+/*Podemos usar o media types de duas maneiras:*/
+@media print{/* iniciando o media type do tipo print, usado para impressão de imagens */
+   a[href]::after{/* vai adicionar um traço antes de todos "href" que é usado para linkar */
+      content: " - " attr(href);/*conteudo que vira antes de todos os href. attr traz o valor de href*/
+   }
+}
+
+/*MEDIA QUERIES*/
+/* alem do WIDTH, temos outros tipo:
+	
+	--width  --Indica a largura da tela. Pode receber os prefixos "min-" e "max-" para indicar larguras mínimas e máximas.
+	--height  --Indica a altura da tela. Pode receber os prefixos "min-" e "max-" para indicar alturas mínimas e máximas.
+	--aspect-ratio  --Indica a proporção da tela, como 16/9 ou 4/3
+	--orientation  --Indica se a tela está no modo Retrato (portrait - altura maior do que largura) ou Paisagem (landscape - largura maior do que altura).
+	--resolution  --Indica a densidade de pixels do dispositivo.
+	--scan  --Indica o modo de digitalização de dispositivos de saída de televisão, progressive ou interlaced.
+	--grid  --Indica se o dispositivo de saída é de grade ou bitmap
+	--update-frequency  --Indica a frequência de atualização da tela do dispositivo
+	--overflow-block  --Verifica se como o dispositivo lida com o conteúdo que ultrapassa a tela.
+	--overflow-inline  --Indica quando o conteúdo que ultrapassa a tela ao longo da linha pode receber rolagem
+	--color  --Indica quando a tela está em cores
+	--color-index  --Podemos indicar a quantidade de cores, como em "min-color-index: 256" para indicar que a tela deve ter pelo menos 256 cores.
+	--display-mode  --Indica o modo de exibição da tela, como "browser" ou "fullscreen"
+	--monochrome  --A tela não é em cores, ou seja, é monocromática.
+	--inverted-colors  --Indica se as cores estão sendo invertidas
+	--pointer  --Se o dispositivo tiver um apontador, indica a sua precisão
+	--hover  --Indica se o dispositivo possibilita o uso de hover
+	--any-pointer  --Indica quando qualquer tipo de entrada do dispositivo disponibiliza um apontador.
+	--any-hover  --Indica quando qualquer tipo de entrada disponível pelo dispositivo permite o hover
+	--light-level  --Indica o nível de iluminação do ambiente em que o usuário se encontra
+	--scripting	--  --Indica quando o navegador está com JavaScript habilitado
+*/ 
+
+body{/*corpo*/
+   color: red;/*cor da letra */
+}
+@media screen and (min-width: 480px){/*media do  tipo screen, usado para todo tipo de tea colorida que tenha a largura minima de 480 pixels*/
+   body{/*corpo*/
+      color: green;/*cor da letra*/
+   }
+}
+
+/* CRINADO DESIGNS RESPONSIVOS */
+
+div{
+  display: inline-block;/*bloco embutido*/
+  height: 50px;/*altura de 50 pixels*/
+}
+/*OBS: Caso você teste o elemento e ele fique muito grande ou muito pequeno, lembre-se que você pode utilizar as propriedades max-width, min-width, max-height e min-height. Assim o elemento terá limites de crescimento e encolhimento.*/
+.d1{/*na classe d1*/
+  width: 30%;/*largura de 30% em relação ao tamanho da pagina*/
+  background-color: red;/*cor do fundo*/
+}
+
+.d2{/*na classe d2*/
+  width: 70%;/*largura de 70% em relação ao tamanho da pagina*/
+  background-color: green;/*cor de fundo*/
+}
+
+/*MEDIA QUERIES:  Para poder criar um Design Responsivo, na maioria dos casos é indispensável o uso de Media Queries.*/
+
+@media screen and (max-width: 500px){/*add a media screen usada para telas coloridas para tela que tenha no maximo 500 pixels de largura*/
+  .d1, .d2{/*na classe d1 e d2*/
+    width: 100%;/*largura de 100%, pega a largura toda da pagina*/
+    height: 100px;/*altura de 100%, pega a altura toda da pagina*/
+  }
+}
+
+/*LAYOUTS COM FLEX BOX:  Ele facilita o nosso trabalho de alinhar, dimensionar e ordenar elementos em relação aos itens de um contêiner de acordo com o espaço disponível.*/
+
+.container{/*classe container*/
+  display: flex;/*Para começarmos a utilizar o Flexbox precisamos dizer ao CSS que o display do pai dos itens é "flex".*/
+}
+
+/*PROPRIEDADES DO CONTEINER: 
+	--flex-direction  --Indica o eixo principal e direção em que os itens serão posicionados.
+		--flex-direction:  row; flex-direction:  row-reverse; flex-direction: column; flex-direction:  column-reverse; 
+	--flex-wrap  --Por padrão, os itens tentam se encaixar todos na mesma linha. Podemos mudar este comportamento com o flex-wrap
+		--flex-wrap: nowrap; flex-wrap: wrap;  flex-wrap: wrap-reverse;	
+	--justify-content  --Define o alinhamento dos itens ao longo do eixo principal de acordo com o espaço disponível.
+		--justify-content: flex-start;  justify-content: flex-end;  justify-content: center; justify-content: space-between; justify-content: space-round;
+	--align-items  --Define o alinhamento do eixo perpendicular ao fluxo atual dos itens. Ou seja, se os itens estão na horizontal, esta propriedade irá alinha-los na vertical, e vice-versa.
+		--align-items: flex-start; align-items: flex-end; align-items: stretch; align-items: baseline;
+	--align-content  --Alinha as linhas do contêiner quando há espaço extra no eixo perpendicular. Essa propriedade não tem efeito quando há somente uma linha de itens.
+		--align-content: flex-star; align-content: flex-end; align-content: stretch; align-content: space-between; align-content: space-round;
+*/
+	
+/*PROPRIEDADES DOS ITENS: 
+	--order  --Com essa propriedade nós podemos alterar a ordem de exibição dos itens.
+		--.item3{order:  -1} --ordenando de forma decrescente -1, ordenando de forma crescente 1
+	--flex-grow  --Indica ao item como ele deve crescer se necessário. O valor passado é um número sem unidade que irá indicar a proporção.
+		--.item3{flex-grow: 2;}
+	--flex-shrink  --Indica ao item como ele deve encolher se necessário. O valor passado é um número sem unidade que irá indicar a proporção.
+	--flex-basic  --Define o tamanho padrão de um elemento antes do espaço disponível ser distribuído
+		--.item3{flex-basic:  50%;}
+	--align-self  --Permite sobrescrever o alinhamento de um elemento definido no contêiner pela propriedade align-items.Os valores possíveis são os mesmos do align-items: flex-start, flex-end, center, baseline e stretch.
+		--.container{align-items:  flex-start;}
+		--.item3{align-self:  flex-end;}
+*/
+/*ATALHOS:  Temos também as propriedades em sua forma curta para evitar que a gente tenha que escrever várias propriedades no nosso código.
+	--flex-flow  --Aplicado no contêiner. Nos permite passar os valores de flex-direction e flex-wrap juntos.
+	--flex  --Aplicado nos itens. Nos permite passar os valores de flex-grow, flex-shrink e flex-basis juntos.
+*/
+
+/* PRE-PROCESSADORES / PRÉ-PROCESSADORES: Pré Processadores são programas que recebem alguma entrada, faz algumas conversões em seu conteúdo e nos retorna um conteúdo processado.*/
+
+$minha_cor = #0062ac;/*uma cor especifica*/
+span{
+   color: $minha_cor;/*definindo a da letra*/
+}
+div{
+   background-color: $minha_cor;/*definindo a cor de fundo*/
+}
+/*Após processamento, ficará assim: */
+span{
+   color: #0062ac;
+}
+div{
+   background-color: #0062ac;
+}
+
+/*ANINHAMENTO: ;Imagine quando estamos declarando um seletor onde temos um mesmo elemento pai para vários elementos. Em CSS puro faríamos algo assim:*/
+
+.my-list{ ... }/**/
+.my-list .list-item{ . . . .}/**/
+.my-list .list-header{ . . . }/**/
+.my-list .list-header:hover{ . . . }/**/
+/*fariamos assim: */
+.my-list{
+   .list-item{ . . . }
+   .list-header{
+      &:hover{ . . . }
+   }
+}
+
+/*MIXINS:  Com os Mixins podemos declarar regras que serão reutilizadas em vários lugares.*/
+@mixin my-box(){/**/
+   color: white;/**/
+   background-color: green;/**/
+}
+
+span{ @include my-box(); }/**/
+div{ @include my-box(); }/**/
+/*o resultado usando CSS sera: */
+span {
+   color: white;
+   background-color: green;
+}
+
+div {
+   color: white;
+   background-color: green;
+}
+
+/*HERANÇA: Na herança declaramos regras e depois dizemos que um outro elemento irá herdar as características de outras regras. */
+.my-box{
+   color: white;
+   background-color: green;
+}
+div{
+   @extend .my-box;
+}
+/*O resultado em CSS será:*/
+.my-box, div {
+   color: white;
+   background-color: green;
+}
+/*IMPORTAÇÃO: Temos importações no CSS, o que nos permite criar arquivos menores, portanto mais fáceis de se administrar. */
+
+/*ARQUITETURA E PRATICAS*/
+/*--OOCSS: Veja que em uma classe (.botao) nós definimos a estrutura do elemento. Na outra classe (.primario e .secundario) nós criamos a estilização do elemento. Tudo o que tiver estrutura de botão nós podemos reutilizar a classe ".botao".Todos os elementos que tiverem o estilo da classe ".primario" poderá reutilizá-la e assim por diante.*/
+.botao{
+   width: 200px;
+   height: 50px;
+}
+.primario{
+   color: white;
+   background-color: #0062ac;
+}
+.secundario{
+   color: #252525;
+   background-color: #f2f2f2;
+}
+/*--BEM:*/
+	/*--BLOCK: É uma abstração de um elemento, um novo componente. Ele é visto como um elemento pai */
+.botao{ . . . }
+    /*--ELEMENTS: Filhos do Block, ou seja, elementos que serão colocados dentro de um elemento considerado Block. O nome de suas classes devem ser escritos com dois "_" após o nome do Block.*/
+.botao__label{ . . . }
+	/*--MODIFIERS: Podem modificar o estilo do Block. O nome das classes dos Modifiers devem ser escritos com dois "-" após o nome do Block. */
+.botao--azul{ . . . }
+
+	/*--ACSS:  A ideia aqui é declarar algumas classes que possuem apenas uma declaração.*/
+.mt-10{ margin-top: 10px; }
+.mt-20{ margin-top: 20px; }
+.fs-20{ font-size: 20px; }
+.minha-div{
+   color: red;
+   background: green;
+   font-size: 15px;
+}
+	/*--DRY CSS: A sigla DRY vem de Don’t Repeat Yourself (não se repita). */
+div{
+   background-color: #000;
+   color: #fff;
+}
+span{
+   background-color: #f00;
+   color: #fff;
+}
+/*--SMACSS: Nos baseamos em cinco categorias principais, das quais normalmente criamos um diretório para cada uma: base, layout, module, state e theme. */
+	/*--BASE: Aplicamos seletores sem o uso de classes ou IDs, apenas elementos. */
+	/*--LAYOUT: Apenas são declaradas regras que não irão se repetir na página, como o header, footer e outros elementos que possam compor o seu layout. */
+	/*--MODULE: Aqui teremos a declaração de classes reutilizáveis em forma de componentes como menu, calendário, listas, tabelas, etc.*/
+	/*--STATE: É onde declaramos classes que determinam o estado de um elemento, como visible, active, collapsed, hidden, enabled, etc. */
+	/*--THEME: Essa categoria serve para páginas onde podemos criar mais de uma versão do mesmo layout ou permitir que o usuário mude o tema da página, alterando as cores, fontes, imagens, etc.*/
+
+/*--ITCSS: No ITCSS temos várias camadas, que são imaginadas em um triângulo invertido. Quando mais acima, menos específica a regra. Quanto mais abaixo, mais específica, e por tanto, irá sobrescrever as regras anteriores.*/
+	/*--SETTINGS: É onde declaramos as configurações do nosso projeto, como variáveis de medidas, cores, etc.*/
+$my-color: #0057FB;
+$footer-height: 120px;	
+	/*--TOOLS: É onde colocamos funções, mixings, placeholders, etc presentes nos Pré Processadores. Se não estiver utilizando algum Pré Processador, esta camada não será utilizada.*/
+@mixin  my-box(){
+   width: 200px;
+   height: 100px;
+}
+	/*-GENERICS: Essa camada é para as propriedades com a menor especificidade. Por isso, o mais comum aqui é o seletor "*". -*/
+*{
+   box-sizing: border-box;
+}	
+	/*--BASE: Essa camada é voltada para estilizações mais básicas dos elementos. Então, nada de IDs ou Classes, apenas o seletor de tags.*/
+div{
+   padding: 10px;
+}
+	/*--OBJECTS: Aqui utilizamos apenas classes. É onde declaramos a estilização da estrutura dos nossos elementos.*/
+.my-button{
+   width: 200px;
+   padding: 10px;
+}
+	/*--COMPONENTS: Na camada anterior nós tentamos ser mais genéricos. Agora na camada Components nós podemos ser mais específicos quanto a estilização do elemento. Também só são permitidas classes. */
+.my-red-button{
+   background-color: red;
+   color: white;
+   border: 2px solid black;
+}	
+	/*--TRUMPS:  Esta camada tem as regras com a maior especificidade de todas, ou seja, se uma classe daqui for colocada em um elemento, as propriedades de uma classe da camada Trumps irá sobrescrever as propriedades declaradas em outras camadas.*/
+.hidden{
+   display: none !important;
+}
+
+/*--RSCSS: Reasonable System for CSS. Ele foi feito pensando em escrever um CSS que tenha mais sentido e significado.*/
+.search-form{ . . . }
+.search-form > .input{ . . . }/*input é filho de search-form*/
+.search-form > .button { . . . }/*button é filho de search-form*/
+
+/*estilizando um svg*/
+#myCircle{
+   stroke: red;
+   stroke-width: 10;
+   fill: green;
+   cx: 100;
+   cy:   100;
+   r: 40;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

@@ -1,0 +1,351 @@
+body{/*DEFINE A MARGEM*/
+	margin: 0;
+}
+
+p{
+  background-color: #FF0000;/*define uma cor no padrão RGB*/
+  display: inline-block;/*define um bloco*/
+  width: calc( (100% / 3) - 2px ); /*defininco o tamanho da borda*/
+  border:  1px solid black;/*borda*/
+}
+
+p{
+  font-family: "Times New Roman", Tahoma, arial;/*font-family. Observe que os nomes de fontes que possuem espaços devem vir entre aspas:*/
+
+} 
+
+@font-face {/*A regra @font-face é utilizada para se utilizar fontes hospedadas em servidores remotos.*/
+  font-family: Amaze;
+  src: url("AMAZR___.ttf");/*Neste exemplo o arquivo “AMAZR___.ttf” (que é o arquivo da fonte que será utilizada) deverá estar hospedado na mesma pasta onde está o arquivo de estilo ou o arquivo HTML caso o código CSS estiver incorporado ao arquivo HTML.*/
+}
+
+p{/*deixa em italic*/
+  font-family: "Times New Roman", Tahoma, arial;
+  font-style: italic;
+}
+
+p{/*A propriedade font-variant é usada para escolher entre as variantes normal ou small-caps. Por exemplo, uma fonte small-caps é aquela que usa letras maiúsculas de tamanhos reduzidos.*/
+  font-family: "Times New Roman", Tahoma, arial;
+  font-variant: small-caps;
+}
+
+p {
+  font-family: "Times New Roman", Tahoma, arial;
+  font-weight: 700;/*a espessura do negrito*/
+  font-weight: bold;/*valor pre definido e mais aconselhavel em relação ao negrito*/
+}
+
+p{ font-size: 1em; }
+
+p{ font-size: 1em; }
+p{ font-size: 20px; }
+p{ font-size: 1.5rem; }
+p{ font-size: 75%; }
+
+p{/*Propriedade utilizada para indicar o grau de condensação ou expansão dos caracteres de uma fonte. A propriedade font-size-adjust especifica que o tamanho da fonte deve ser escolhido baseado na altura das letras minúsculas. Recurso utilizado para melhorar a legibilidade de caracteres muitos pequenos.*/
+  font-stretch: condensed;
+}
+
+p{/*No momento da criação deste curso, este recurso funciona por padrão apenas no Firefox.*/
+  font: 12px verdana;
+  font-size-adjust:0.545;
+}
+/* COLOR  */
+
+p{/* COLOR azul */
+  color: blue;
+}
+
+p{/*TEXT-INDENT A propriedade text-indent permite aplicar espaço à primeira linha de um parágrafo.*/
+  text-indent: 20px;
+}
+
+h1{/*text-align Com a propriedade text-align, os textos podem ser alinhados à esquerda (left), à direita (right) ou centralizados (center).*/
+  text-align: left;
+}
+
+h2{
+  text-align: right;
+}
+
+h3{
+  text-align: center;
+}
+
+p{
+  text-align: justify;
+}
+
+h1{/*text-decoration. A propriedade text-decoration possibilita aplicar "efeitos" ou "decorações" em textos.*/
+  text-decoration: line-through;
+}
+
+h2{
+  text-decoration: overline;
+}
+
+h3{
+  text-decoration: underline;
+}
+
+p.letter{/* "treinaweb cursos" transforma-se em "Treinaweb Cursos";*/
+  text-transform: capitalize;
+}
+p.letter{/*"treinaweb cursos" transforma-se em "TREINAWEB CURSOS";*/
+  text-transform: uppercase;
+}
+p.letter{/* "TREINAWEB CURSOS" transforma-se em "treinaweb cursos";*/
+  text-transform: lowercase;
+}
+p.letter{/*Sem transformações - o texto é apresentado como foi informado no HTML.*/
+  text-transform: none;
+}
+
+h1 {/*Text Shadow. Essa propriedade adiciona sombras ao texto.*/
+    text-shadow: 2px 2px 5px #FF0000;
+}
+
+/* LETRAS, PALAVRAS E LINHAS */
+
+p{
+  letter-spacing: 2px;/*A função do letter-spacing é aplicar um espaço entre as letras do texto do elemento.*/
+}
+
+p{
+  word-spacing: 10px;/*Define um espaçamento entre as palavras do texto.*/
+}
+
+p{
+    line-height: 200%;/*Aplica a altura da linha em porcentagem.*/
+}
+
+/*ESPAÇO EM BRANCO*/
+
+div{
+  width: 200px;
+  border: solid 1px #cecece;
+  white-space: normal;/* Os espaços (e tabs) em branco são ignorados pelo browser;*/
+}
+div{
+  width: 200px;
+  border: solid 1px #cecece;
+  white-space: pre;/*s espaços (e tabs) em branco são preservados pelo browser e não há quebra de linha. Novas linhas são preservadas;*/
+}
+div{
+  width: 200px;
+  border: solid 1px #cecece;
+  white-space: pre-wrap;/*Os espaços (e tabs) em branco são preservados pelo browser e há quebra de linha. Novas linhas são preservadas;*/
+}
+div{
+  width: 200px;
+  border: solid 1px #cecece;
+  white-space: nowrap;/*O texto é apresentado em uma única linha na tela. Não há quebra de linha até ser encontrada uma tag <br/>. */
+}
+div{
+  width: 200px;
+  border: solid 1px #cecece;
+  white-space: pre-line;/*Sequências de quebra de linha são preservadas.*/
+}
+
+/* Box Model */
+
+h1{
+  display: block;/*elementos que ocupam a linha inteira, ou seja, o próximo elemento será jogado para a linha de baixo. Podemos definir a largura e altura desses elementos.*/
+}
+
+h2{
+  display: none;/*Caso a gente queira que o elemento não seja apresentado, passamos o valor none.
+
+
+
+*/
+}
+
+h3{
+  display: inline-block;/*esse tipo especial é uma mistura do comportamento de linha e bloco. Tem o mesmo comportamento do Inline, com a diferença que podemos definir largura e altura.
+*/
+/* OBS: Inline (linha): elementos que seu tamanho depende do tamanho do conteúdo, então não podemos definir uma largura e altura para eles. */
+}
+
+div{
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 30px;/*Serve para arredondarmos as bordas do elemento.*/
+}
+
+/* MAX e MIN */
+/*Mas e se o usuário estiver com um monitor muito largo? Nosso layout poderia ficar estranho. Para isso, temos a possibilidade de passar um valor máximo para as dimensões de um elemento.*/
+  
+div{
+  width: 100%;
+  max-width: 1200px;/**/
+}
+div{
+  width: 100%;
+  max-height: 1200px;/**/
+}
+div{
+  width: 100%;
+  min-width: 1200px;/**/
+}
+div{
+  width: 100%;
+  min-height: 1200px;/**/
+}
+
+/*BOX SHADOW. A propriedade box-shadow serve para aplicar sombras ao elemento*/
+div {
+  box-shadow: 10px 10px 5px #888888;/*Passamos a posição horizontal, vertical, nível de ofuscamento e cor da sombra.*/
+}
+
+/*OUTLINE. Outline é uma linha que existe em volta dos elementos e serve para destacá-los.*/
+/*
+outline-color: cor da linha;
+
+outline-offset: distância da linha em relação à borda do elemento;
+
+outline-style: estilo da borda, como hidden(oculto), dashed(traços) e solid(linha contínua);
+
+outline-width: largura da linha da borda.
+*/
+
+/*OVERFLOW.A propriedade overflow define quando o conteúdo de um elemento deve ser exibido, escondido ou gerar uma barra de rolagem quando este conteúdo for maior do que o elemento que o contém. A propriedade overflow é um atalho para overflow-x e overflow-y, para especificarmos o comportamento apenas para a horizontal e vertical, respectivamente.*/
+
+div {
+    background-color: #eee;
+    width: 50px;
+    height: 50px;
+    border: 1px dotted black;
+}
+
+/*Posicionamento Absoluto*/
+
+div{
+  position: absolute;
+  right: 0;/*Em relação ao elemento pai, ela tem uma distância 0 na direita*/
+  bottom: 10px;/*e distância de 10px na parte de baixo.*/
+}
+
+/*Z Index
+É importante lembrar que a propriedade z-index só funciona em elementos que tenha a propriedade position declaradas como fixed, relative ou absolute.*/
+
+div{
+  position: relative;/*lterar essa ordem de empilhamento dos elementos com a propriedade z-index. Os elementos que tiverem um valor maior ficarão mais em cima na pilha.*/
+  z-index: 2;
+}
+
+/**/
+
+p{
+    border: 1px solid black;
+}
+img {
+    float: right;/*O texto contorna a imagem*/
+}
+
+div{
+    clear: both;/*Para parar com o comportamento do float, utilizamos a propriedade clear.
+
+
+
+*/
+}
+
+/* list-style-image. DEFININDO UM MARCADOR PARA AS LINHAS DE UMA TABELA <ul> */
+
+/*list-style-image: ;
+
+none: Nada definido;
+url: url("caminho/marcador.gif").
+list-style-position
+outside: marcador fora do alinhamento do texto;
+inside: marcador alinhado com texto.
+list-style-type
+none: sem marcador;
+disc: círculo (bolinha cheia);
+circle: circunferência (bolinha vazia);
+square: quadrado cheio;
+decimal: números 1, 2, 3, 4, ...;
+decimal-leading-zero;
+lower-roman: romano minúsculo i, ii, iii, iv, ...;
+upper-roman: romano maiúsculo I, II, III, IV, ...;
+lower-alpha: letra minúscula a, b, c, d, ...;
+upper-alpha: letra maiúscula A, B, C, D, ...;
+lower-greek;
+lower-latin;
+upper-latin;
+hebrew;
+armenian;
+georgian;
+cjk-ideographic;
+hiragana;
+katakana;
+hiragana-iroha;
+katakana-iroha;*/
+
+ul{
+  list-style-image: url(https://d2v0x26thbzlwf.cloudfront.net/prod/5/arquivos/seta.gif);/*Define uma imagem como marcador para os itens da lista. Exemplo:*/
+}
+
+/*list-style-position. Esta propriedade altera a posição dos marcadores. */
+
+ul{
+  list-style-position: inside;
+}
+ul{
+  list-style-position: outside;
+}
+
+/*list-style-type. Esta propriedade define o tipo de marcador (estilo) a ser usado.As outras opções de lista são citadas no início. Teste mais algumas delas.*/
+list-style-type: none;
+list-style-type: disc;
+list-style-type: circle;
+list-style-type: square;
+
+/*list-style. Esta é a maneira abreviada de escrevermos uma regra para as propriedades das listas.*/
+
+list-style: position imagem;
+/*EXEMPLO 1*/
+ul{
+  list-style: inside url("setinha.gif");
+}
+
+list-style: position type;
+/*EXEMPLO 2*/
+ul{
+  list-style: inside circle;
+}
+
+/* FORMATANDO TABELAS */
+
+table {/*Indica que as bordas dos elementos das tabelas devem se junta*/
+    border-collapse: collapse;
+}
+
+table, th, td, tr {
+    border: 1px solid black;
+}
+
+table {/*Indica a distância entre as bordas das células da tabela.
+
+*/
+    border-collapse: separate;
+    border-spacing: 10px 50px;
+}
+
+table, td, tr, th {/*Indica onde a legenda da tabela será posicionada. Para isso, vamos incluir a tag <caption> na nossa tabela.*/
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+caption {
+    caption-side: bottom;
+}
+
+table, td, tr, th{/*Define quando uma célula vazia deve ser oculta. Disponível apenas quando as bordas são separadas.*/
+    border: 1px solid black;
+    empty-cells: hide;
+}
+
+
+/**/

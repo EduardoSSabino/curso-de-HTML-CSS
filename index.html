@@ -1,0 +1,369 @@
+<!DOCTYPE html> <!-- indica ao navegador que esse arquivo é do tipo HTML5 -->
+<html><!-- ela é a raiz da página, ou seja, todo código estara dentro do html -->
+<head><!-- nosso cabeçalho. colocamos infromações do nosso documento -->
+	<title>Titulo</title><!-- vai aparecer na aba da página -->
+</head>
+<body><!-- onde fica o corpo do nosso documento, ou seja, tudo que aparecer na página estará aqui -->
+<b>Olá</b><!-- colocando em negrito algum texto na página -->
+
+<img src="minha_imagem.png" /> <!-- No exemplo acima estamos exibindo uma imagem de nome “minha_imagem.png”. -->
+
+<p>Meu Texto</p><!-- a tag p significa um paragrafo -->
+
+<b>Meu Texto</b><!-- Como a tag “<b>” indica um texto em negrito, o navegador irá renderizar o texto em negrito. -->
+ 
+<i>Meu Texto</i> <!-- texxto em italico -->
+
+<ins>Meu Texto</ins> <!-- Deixa o texto sublinhado. Indica um texto que foi inserido, em oposição à tag <del>. -->
+
+<del>Meu Texto</del> <!-- Deixa o texto riscado. Indica um texto que foi removido, em oposição à tag <ins>. -->
+
+<small>Meu Texto</small> <!-- Define um texto pequeno. -->
+
+<sup>Meu Texto</sup> <!-- Deixa o texto um pouco acima do texto comum. -->
+
+<sub>Meu Texto</sub> <!-- Deixa o texto um pouco abaixo do texto comum. -->
+
+<q>Meu Texto</q> <!-- Marca uma citação. -->
+
+<p>Meu Texto</p> <!-- Define um parágrafo. -->
+
+<br /><!-- Indica que o navegador deve pular uma linha -->
+
+<span>Meu Texto</span> <!-- Define uma seção no texto. Não tem efeito na formatação, mas utilizaremos muito quando aprendermos CSS. -->
+
+<h1>Meu Texto</h1><!-- Define um título de um texto que vai do tamanho h1 até o h6, onde h6 é o menor -->
+
+<hr /> <!-- Renderiza uma linha horizontal, utilizada para definir uma mudança no conteúdo. -->
+
+<bdo dir="rtl" >Meu Texto</bdo> <!-- otxeT ueM. Podemos utilizar para definir que o texto deverá ser renderizado em uma determinada direção. O atributo “dir” no exemplo acima tem o valor “rtl” (Right to Left - direita para esquerda) -->
+
+<ruby> <!-- É mais utilizado para textos com palavras escritas com ideogramas.  Funciona junto com a tag <rt>, onde passamos a leitura ou significado do ideograma. O texto de <rt> irá aparecer acima do caractere indicado pela tag <ruby-->
+水 <rt> água </rt>
+</ruby>
+ 
+    <ol><!-- criando uma lista ordenada, que antes do da linha vem um numero ou letra indicando um "passa a passo"  -->
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ol>
+
+<ul><!-- crinado uma lista não ordenada, como uma receita de bolo na frente, só com o ponto -->
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+</ul>
+
+<dl><!-- lista de descrição -->
+  <dt>HTML</dt> <!-- "coluna" -->
+  <dd>- HyperText Markup Language</dd><!-- o valor da "coluna" -->
+  <dt>CSS</dt>
+  <dd>- Cascading Style Sheet</dd>
+</dl>
+
+<progress value="30" max="100" ></progress><!-- cria uma barra de progresso que recebe o valor de 30 e o valor áximo é 100 -->
+
+<meter value="30" max="100" min="0" ></meter><!-- cria uma barra que muda de cor conforme o progresso -->
+
+<table><!-- criando uma tabela -->
+  <thead>
+  <tr>
+    <th>Nome</th> <!-- linhas -->
+    <th>Sobrenome</th>
+    <th>Idade</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>João</td><!-- colunas, os valores -->
+    <td>Silva</td>
+    <td>28</td>
+  </tr>
+</table>
+
+<a href="index.html" >Home</a><!-- crinado ancoras que levara pra outra page (na mesma aba) -->
+<a href="google.com" target="_blank" >Google</a><!-- crrega o link em outra aba usando o target="_blank" -->
+
+  <h1>Textos</h1> <br> <!-- titulo da page // br quebra linha -->
+  <a href="#title1">texto 1</a><!-- gera um "link" que leva direto para o meu texto 1 -->
+  <a href="#title2">texto 2</a><!-- gera um "link" que leva direto para o meu texto 2 -->
+
+
+  <h2 id="title1">texto 1</h2><!-- titulo do meu paragrafo -->
+  <p>
+   asdfghjklçlkjhgfdsdfghj<!-- conteudo do paragrafo 1 -->
+  </p>
+
+  <h2 id="title2">texto 2</h2><!-- meu titulo do paragrafo 2 -->
+  <p>
+   sdfghjklçfghjklç<!-- conteudo do meu paragrafo -->
+  </p>
+
+  <form><!-- Uma necessidade muito comum para desenvolvedores são locais onde o usuário possa interagir com a página e enviar informações para serem processadas -->
+  <!-- campos do formulario -->
+</form>
+
+<form accept-charset="utf-8"></form><!-- É utilizado para definir qual o charset será utilizado pelo formulário. Por exemplo: utf-8-->
+
+<form autocomplete="on"><!-- auto complete funciona como um asugestão, por exemplo no login
+do facebook, quando colocamos nosso email, ele sugere o email completo abaixo -->
+  <input type="text" name="email">
+</form>
+
+<form action="http://www.nosso-servidor.com.br/cadastro/usuario.php"></form><!-- especifica para onde os dados do formulário serão enviados. Normalmente será o link de uma página no servidor: -->
+
+<form action="http://www.nosso-servidor.com.br/cadastro/usuario.php" method="post"></form><!-- Especifica o método do HTTP que será utilizado para a submissão (get ou post): -->
+
+<form action="http://www.nosso-servidor.com.br/cadastro/usuario.php" method="post" enctype="multipart/form-data"></form><!-- SÓ FUNCIONA COM O METODO POST. Especifica quando os dados do formulário precisam ser codificados antes de serem enviados ao servidor. -->
+
+<form novalidate></form><!-- Impede a validação dos campos antes da submissão: -->
+
+<form target="_blank"></form><!-- Assim como na tag <a>, o target indica onde a página de destino será aberta.-->
+
+<input type="text" /><!-- Para escrever um pequeno texto utilizamos a tag <input /> -->
+<!-- OBS: TYPE É UM TRIBUTO! placeholder - texto que aparece quando o campo está vazio;
+maxlength - quantidade máxima de caracteres;
+required - indica que o campo é necessário, não permitindo submeter o formulário se o campo estiver em branco;
+disabled - deixa o campo desabilitado;
+readonly - impede edições no campo, permitindo apenas que o usuário leia o valor. -->
+
+<input type="email" /><!-- Esses tipos são idênticos ao tipo “text”. Em dispositivos que exibem teclado na tela, como smartphones e tablets, esses tipos fazem com que o teclado exibido seja diferente. Um exemplo é o tipo “email”, que exibe uma tecla @, ou “url” que exibe uma tecla “.com”. -->
+<input type="url" />
+
+<input type="number" /><!-- Indica um campo do tipo number.  -->
+
+<form><!-- Cria um Radio Button, onde podemos selecionar apenas uma opção. Note que colocamos o mesmo nome nos dois inputs. Tipo: MAsculino ou feminino, pertecem ao mesmo campo-->
+  <input type="radio" name="sexo" checked="checked" /> Homem
+  <input type="radio" name="sexo" /> Mulher
+</form>
+
+<h2>Escolha quantas cores você desejar.</h2>
+<form><!-- Diferente do Radio Button, onde só selecionamos uma opção, o CheckBox serve para selecionarmos mais de uma opção. Tipo: selecionar 3 cores -->
+  <input type="checkbox" name="cor1" /> Azul
+  <input type="checkbox" name="cor2" /> Vermelho
+  <input type="checkbox" name="cor3" /> Amarelo
+</form>
+
+<input type="date" /><!-- Serve para selecionar datas e tempo. -->
+<input type="time" />
+<input type="datetime-local" />
+<input type="month" />
+<input type="week" />
+
+<input type="range" min="0" max="10" /><!-- funciona como um "potenciometro", que tem um valor maximo e um minimo-->
+
+<input type="color" /><!-- Abre uma paleta de cores para a seleção de uma cor. como no paint. -->
+
+ <input type="file" /><!-- Permite que a gente selecione um arquivo de nosso computador. -->
+
+<input type="button" value="Botão" /><!-- Esses tipos criam um botão. como no JOptionPane -->
+
+<select><!-- A tag <select> nos permite criar uma lista onde podemos selecionar um item -->
+  <option value="html">HTML 5</option><!-- Cada uma das opções é criada pela tag <option>. O atributo “value” da tag option é o valor a ser enviado ao servidor, e o valor escrito dentro da tag é o que será exibido ao usuário. -->
+  <option value="css">CSS 3</option>
+  <option value="js">JavaScript</option>
+</select>
+
+<input list="browsers" name="browser"><!-- Podemos ter um efeito parecido com a tag DataList, mas ela funciona em conjunto com a tag input. -->
+  <datalist id="browsers"><!-- Note que a tag <datalist> também recebe um conjunto de <option>, mas ela também tem um id para identificá-la. Enquanto isso, também temos um input de texto. Ele tem um atributo “list”, onde passamos o id da nossa <datalist>. -->
+    <option value="Internet Explorer"><!-- option é obviamente uma opção que aparece abaixo do "JOptionPane" -->
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+
+ <fieldset><!-- Serve para criarmos um campo dentro do formulário para poder melhor organizar os campos. A tag <legend> serve para darmos um título à seção. -->
+  <legend>Cadastro</legend>
+  Nome: <input type="text"><br>
+  Email: <input type="text"><br>
+</fieldset>
+
+<form autocomplete="on"><!-- Esta tag serve para darmos nomes aos campos. Se passarmos o id do input no atributo “for”, estaremos indicando ao navegador que o Label é referente àquele campo. Quando o usuário clicar no texto do Label, o input receberá foco, permitindo que o usuário já entre com os dados. -->
+  <label for="email">Email</label>
+  <input type="text" id="email">
+</form>
+
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)"><!-- Esse campo serve para exibirmos a saída de alguma entrada. -->
+	<!-- Neste exemplo, utilizamos o range e um campo de número que o usuário pode mudar à vontade. -->
+0 <input type="range" id="a" value="50"> 100
++
+<input type="number" id="b" value="50">
+=
+<output name="x" for="a b"></output>
+</form>
+
+<img src="imagens/html5.png" alt="HTML5" /><!-- Podemos alterar as dimensões da imagem com os atributos width e height.Um atributo muito importante é o “alt”. Ele serve para descrevermos uma imagem. -->
+
+<figure><!-- A tag <figure> é utilizado para marcar uma foto, diagrama, ilustrações, etc no documento. Ela ajuda a melhorar a semântica em conjunto com a tag <img />. -->
+  <img src="imagens/html5.png" />
+  <figcaption>Figura 1. - Logo do HTML5</figcaption>
+</figure>
+
+<!-- AUDIO / MUSICA -->
+<audio controls><!-- A tag de áudio permite colocarmos um player para sons e músicas na nossa página. O atributo “controls” indica que os controles, como play/pause, devem ser exibidos.-->
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+<!-- VIDEO -->
+<video width="320" height="240" controls><!-- A tag <video> funciona da mesma maneira que a tag <audio>, com a diferença que a tag também aceita os atributos width e height, assim como a tag <img />, para que possamos definir largura e altura do vídeo. -->
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+</video>
+
+<!-- SEMANTICA  -->
+
+<span>alal</span><!-- A tag <span> é um elemento de linha, o que significa que os elementos seguintes a ela virão na sua frente caso ainda haja espaço na linha -->
+
+<address><!-- Define informações de contato -->
+Av. Paulista, 1765, Conj 71 e 72 - Bela Vista - São Paulo - SP - 01311-200
+</address>
+
+<article><!-- Define um artigo. Muito utilizado em Posts de blogs e sites de notícias. -->
+  <h1>Google revela nova inteligência artificial</h1>
+   <p>Hoje o Google revelou sobre um projeto em desenvolvimento . . . . .
+</article>
+
+<p>Hoje o Google revelou sobre um projeto em desenvolvimento . . . . .</p>
+
+<aside><!-- Define um conteúdo ao lado do conteúdo da página. Muito utilizado em colunas ao lado da parte principal dos sites, onde normalmente possui a navegação, propagandas ou algo relacionado com o conteúdo principal. -->
+  Outros posts sobre Google:
+  . . .
+</aside>
+
+<code><!-- Define um pedaço de código de computador -->
+   var counter = 0;
+</code>
+
+<details>
+<summary>Lista de Cursos</summary><!-- A tag <details> serve para acrescentar detalhes adicionais sobre algo, mas essa informação fica escondida, sendo exibida apenas quando o usuário clicar para ler.A tag <summary> serve para exibir um título para o <details>, que ficará sempre visível. -->
+<ul>
+  <li>HTML5 e CSS3</li>
+  <li>JavaScript</li>
+  <li>Node.js</li>
+</ul>
+</details>
+
+<dfn>HTML</dfn> significa HyperText Markup Language, e é utilizado para a estruturação de páginas web.
+
+Meu Texto
+<dialog open > Minha Modal </dialog><!--Aquelas janelinhas que abrem em cima do conteúdo principal. Quando colocamos o atributo “open”, o conteúdo aparece, centralizado na tela e flutuando sobre o conteúdo. -->
+
+<footer>©TreinaWeb Tecnologia LTDA</footer><!-- Define um rodapé para o documento ou seção. -->
+
+<article><!--  -->
+  <header>
+    <h1>Novos cursos na TreinaWeb!</h1>
+   </header>
+  <p>TreinaWeb anuncia novos cursos este mês . . .
+</article>
+
+<main><!-- Define a parte principal de um documento. Por ser algo indicado como principal, o conteúdo dessa tag deve ser único e ela não deve ser filha de tags como <article>, <footer>, <header> ou <nav>. -->
+  <h1>Notícias do Dia</h1>
+
+  <article>
+    <h1>Novo curso de JavaScript</h1>
+    <p>Conheça o novo curso de . . . </p>
+  </article>
+
+  <article>
+    <h1>Chrome lança nova funcionalidade</h1>
+    <p>O navegador lançou ontem uma nova maneira de . . . </p>
+  </article>
+
+</main>
+
+<nav><!-- Define um grupo de links de navegação. Essa tag é muito utilizada nos menus utilizados para se navegar entre as páginas de um site. -->
+  <a href="/">Home</a> |
+  <a href="/servicos/">Serviços</a> |
+  <a href="/sobre/">Sobre Nós</a> |
+  <a href="/contato/">Contato</a>
+</nav>
+
+<section><!-- Define seções no documento, como capítulos, cabeçalhos, rodapés, etc. -->
+    <h1>Chrome lança nova funcionalidade</h1>
+    <p>O navegador lançou ontem uma nova maneira de . . . </p>
+</section>
+
+<p>O evento irá ocorrer em <time datetime="2017-07-07 21:00">7 de julho de 2017 às 9 da noite</time>.</p>
+<!-- Essa tag é utilizada no meio de textos, e define data/hora. O conteúdo da tag é o tempo apresentado ao usuário, o que ele irá ler. -->
+
+<!-- CSS -->
+
+<!-- Primeiro, vamos ver 3 maneiras de como colocar CSS na nossa página. -->
+
+<div style="background-color: blue;" >ASBCD</div><!-- CSS Inline. Esse formato não é muito recomendado, pois isso irá misturar HTML com CSS -->
+
+<head><!-- CSS Interno. É quando escrevemos código CSS diretamente em um arquivo HTML. Para isso, basta abrir a tag <style> e escrever o código CSS nela. Normalmente é passada dentro da tag <head>. -->
+<style>
+  div{
+    background-color: blue;
+  }
+</style>
+</head>
+<body>
+  <div></div>
+</body>
+
+<head><!-- Neste modelo, indicamos no arquivo HTML que é necessário carregar um arquivo CSS -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  p {<!-- Se quisermos mudar a cor da fonte de todas as tags <p> para azul, escreveríamos assim-->
+  color: blue;
+}
+</head>
+<body>
+  <div></div>
+</body>
+
+<!-- CORES -->
+
+hsla(50, 10%, 38%, 0.7)<!-- Assim como o RGB, o HSL também aceita transparência: -->
+
+hsl(80, 50%, 30%)<!-- Para esse tipo de declaração, passamos um valor numérico (de 0 a 360) e duas porcentagens.-->
+
+<!-- COLOR A propriedade color serve para alterar a cor da fonte.-->
+
+div{<!-- CSS A propriedade color serve para alterar a cor da fonte.-->
+  color: red;
+}
+<div style="background-color: red" >Meu Texto</div>
+
+<!-- Background A propriedade background muda o fundo dos elementos. Para alterar a cor, utilizamos a propriedade “background-color”. Podemos também utilizar a propriedade “background-image” para passar uma imagem como fundo-->
+
+div{<!-- CSS -->
+  background-color: #FF0000;
+}
+<div style="color: #0FF000">Meu Texto</div><!-- HTML -->
+
+<!-- OPACITY A opacidade não é uma propriedade de cor, mas como influencia na visibilidade do elemento foi colocado aqui por motivos de organização. A opacidade é um número entre 0 e 1-->
+
+div{
+  opacity: 0.5;
+}<!-- CSS -->
+<div style="opacity: 0.5">Meu Texto</div><!-- HTML -->
+
+<!-- Borders. É possível mudar a cor das bordas dos elementos.-->
+
+div{<!-- CSS -->
+  border-width: 5px;
+  border-style: solid;
+  border-color: #00FF00;
+}
+<div style="border-width: 5px;
+  border-style: solid;
+  border-color: #00FF00;
+">Meu Texto</div><!-- HTML -->
+
+<!-- FORMATANDO TEXTOS -->
+
+<head><!-- API de fontes do Google.  http://www.google.com/webfonts-->
+  <link href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'>
+</head>
+
+
+
+</body>
+</html>
+<!--  -->

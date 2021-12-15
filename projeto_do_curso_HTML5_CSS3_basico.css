@@ -1,0 +1,128 @@
+/* PROJETO DO CURSO BÁSICO */
+/*  GERAL
+******************/
+/**/
+html, body{
+    height: 100%;/*pegue a altura total da pagina*/
+    margin: 0;/*tirado a margem da page com outras telas*/
+    font-family: Heveltica, Arial, sans-serif;/*fonte nao serifada. OBS: se nao tiver heveltica, coloque arial. tipo IF e ELSE*/
+    background-color: #161616;/*definindo uma cor pro fundo*/
+    color: white;/*a cor do documento vai ser branco*/
+}
+
+.section-background{
+    position: relative;
+    background-position: center;/*centralizando a imagem no meio da nossa div (tremnaweb)*/
+    background-size: cover;/*faz imagem pegar todo o espaço que esta sobrando*/
+    background-repeat: no-repeat;/*inpedindo que aimagem se repita*/
+    min-height: 500px;/*definindo tamanho minimo*/
+}
+
+.section-container{
+    position: absolute;/*posicionando em relação ao pai, no caso a section acima ja que ela é relative*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.65);/*colocando um fundo preto com opacidade de 65*/
+}
+
+.section-title{/*estiliando o titulo*/
+    text-align: center;/*colocando ele o centro*/
+    font-size: 30px;/*definindo o tamanho*/
+}
+
+.section-text{/**/
+    padding: 10px;/*a afastando das bordas */
+    margin: 0;/*definindo o espaçamento das linhas*/
+    font-size: 18px;/*definindo o tamanho da fonte*/
+    background-color: rgba(0,0,0,0.7);/*tudo preto. com opacidade de 7%*/
+}
+
+.ancora{/*estamos ajustando os nossos links para que assim que forem clicados, pararem na hora certa, sem engolir o titulo*/
+    position: absolute;
+    top: -85px;
+}
+
+
+/*  HEADER
+******************/
+.main-header{/*estilizando nossa classe main-header*/
+    position: relative;/*se tivermos algum item de posição absoluta, vamos conseguir posicionar de form relativa*/
+}
+
+.header-video{
+    width: 100%;/*limitado o tamanho do video. funciona pra qualquer tamanho de tela*/
+}
+
+.navigation{
+    position: fixed;/*fixando meu menu*/
+    top: 0;/*no topo*/
+    left: 0;/*na esquerda*/
+    right: 0;/*e vai ate a direita*/
+    background-color: #3b3b3b;/*definindo cor de fundo*/
+    z-index: 100;/*qualquer item que passe por ele, sempre estara atras e nunca na frente*/
+}
+
+.navigation-list{/*arrumando a imagem interna da nossa lista*/
+    padding: 0;/*espaçamento da borda da pagina (no caso a borda esquerda)*/
+}
+
+.navigation-list-item{/*organizando minha lista*/
+    display: inline-block;/*nao quero que fique embaixo um do outro*/
+    padding: 15px;/* espaçamento dos itens do meu menu */
+}
+/**/
+.nav-link{/*configurando a cor das letras do meu menu*/
+    color: white;/*definindo a cor das letras*/
+    text-decoration: none;/*tirando o sublinhado do meu menu*/
+    font-size: 20px;/*definindo o tamanho da fonte*/
+}
+
+.nav-link:hover{/*mudando a cor do item do meu quando o usuario passar o mouse por cima*/
+    color: #0079d0;/*definindo a cor*/
+}
+
+.logo{
+    position: absolute;/*arrumando a posição do logo. configurando pra ficar sempre ao centro*/
+    top: 50%;/*a linhando verticamente no meio*/
+    left: 50%;/*alnhando horizontalmente no meio*/
+    transform: translate(-50%,-50%);/*alinhando a imagem */
+    max-width: 90%;/*definindo a largura maxima pra nao distorcer quando dermos zoom*/
+}
+
+
+/*  O LUGAR
+******************/
+.lugar{
+    background-image: url('./images/bar_interior.jpg');/*adicionando imagem no fundo*/
+}
+
+
+
+/*  NOSSOS DRINKS
+******************/
+.drinks{
+    background-image: url('./images/drinks_background.jpg');/*adicionando imagem no fundo*/
+}
+
+
+.drink-image{
+    max-width: 30%;/* definindo a largura maxima de 30% */
+    margin-top: -30px/*subindo o um pouco*/
+}
+
+/*  FOOTER - nosso rodapé
+******************/
+.main-footer{
+    position: relative;
+    padding: 10px;/*afastando um pouco as linhas*/
+}
+
+.footer-section{
+    display: inline-block;/*colocando um do lado outro*/
+    width: 32%;/*padronizando a largura das "colunas"*/
+    min-width: 230px;/*largura minima pra nao diminuir a coluna de tamanho*/
+    vertical-align: top;/*alinhando verticalmente*/
+}
+/**/
